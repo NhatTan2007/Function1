@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Thực hành] Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+      <h2>Tempeature Converter</h2>
+      <h4>Type a value in the Fahrenheit filed to convert the value to Cecilus:</h3>
+      Fahrenheit
+      <input type="number" name="fVlue" id="fVlue" onchange="mainProgram()">
+      <p id="resultConvertFahrenheitToCecilus"></p>
+
+      <script>
+            function convertTemperatureFromFtoC(fVlue) {
+                  return (fVlue - 32)/1.8;
+            }
+
+            function mainProgram() {
+                  document.getElementById("resultConvertFahrenheitToCecilus").innerHTML = convertTemperatureFromFtoC(document.getElementById("fVlue").value).toFixed(1);
+            }
+      </script>
+</body>
+</html>

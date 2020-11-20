@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Thực hành] Tìm giá trị nhỏ nhất của mảng</title>
+</head>
+<body>
+      <script>
+            function createRandomIntArray(size,minNumber,maxNumber) {
+                  let randomIntArray = [];
+                  for (let i = 0; i < size; i++) {
+                        randomIntArray[i] = Math.floor(Math.random()*(maxNumber - minNumber + 1)) + minNumber;
+                  }
+                  return randomIntArray;
+            }
+
+            function findMinNumberInArray(array) {
+                  if (array.length === 0) {
+                        return -1;
+                  } else {
+                        array.sort(function(a,b){return a-b;})
+                        return array[0];
+                  }
+                  
+            }
+
+            function mainProgram() {
+                  let sizeOfArray;
+                  do {
+                        sizeOfArray = +prompt("Nhập vào số lượng phần tử của mảng cần tạo: ");
+                  } while (isNaN(sizeOfArray));
+                  let randomIntArray = createRandomIntArray(sizeOfArray,10,200);
+                  let minNumber = findMinNumberInArray(randomIntArray);
+                  if (minNumber !== -1) {
+                        document.write(`Mảng random khởi tạo là: ${randomIntArray.join(", ")}<br>`);
+                        document.write(`Giá trị lớn nhất trong mảng đã khởi tạo là: ${minNumber}`);
+                  } else {
+                        document.write(`Mảng đã khởi tạo là rỗng`);
+                  }
+
+            }
+
+            mainProgram();
+      </script>
+</body>
+</html>

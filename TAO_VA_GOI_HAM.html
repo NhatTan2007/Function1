@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>[Thực hành] Tạo và gọi hàm</title>
+</head>
+<body>
+      
+      <script>
+
+            function processAfterConfirm(answear) {
+                  let result = "";
+                  if (answear) {
+                        result = "Bạn chuẩn bị nhé, chúng tay play games nào!";
+                  } else {
+                        result = "Busy à? Quay lại sau nhé!";
+                  }
+                  return result;
+            }
+            function mainProgram() {
+                  let confirmAnswear = confirm("Chơi game chứ?");
+                  let printResult = processAfterConfirm(confirmAnswear);
+                  document.write(printResult);
+            }
+
+            mainProgram();
+      </script>
+</body>
+</html>
